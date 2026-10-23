@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Runclub Federico II</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,700;0,800;1,900&family=JetBrains+Mono:wght@500;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="ii" viewBox="0 0 66 92"><path d="M0 92 H22 L38 0 H16 Z"/><path d="M28 92 H50 L66 0 H44 Z"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inizio"><svg class="bars" aria-hidden="true"><use href="#ii"/></svg><span>Runclub<br>Federico II</span></a>
+    <nav class="nav" aria-label="Sezioni">
+      <a href="#programma">Programma</a>
+      <a href="#gruppi">Gruppi</a>
+      <a href="#iniziare">Come iniziare</a>
+      <a href="#domande">Domande</a>
+      <a class="btn btn-primary" href="#contatti">Corri con noi</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inizio">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <figure class="hero-logo">
+        <img class="logo-light" src="img/logo-chiaro.webp" width="1568" height="676" alt="Logo Runclub Federico II: un omino bianco corre sulla II del nome">
+        <img class="logo-dark" src="img/logo-scuro.webp" width="1568" height="676" alt="Logo Runclub Federico II: un omino bianco corre sulla II del nome">
+      </figure>
+
+      <aside class="ticket" aria-labelledby="next-title">
+        <div class="ticket-head">
+          <p class="eyebrow live"><svg class="bars" style="width:14px;height:20px" aria-hidden="true"><use href="#ii"/></svg>Prossima uscita</p>
+        </div>
+        <h2 id="next-title">Il lungo della domenica</h2>
+        <dl>
+          <dt>Quando</dt><dd>Dom · <span class="ph">[ORA]</span></dd>
+          <dt>Ritrovo</dt><dd><span class="ph">[LUOGO]</span></dd>
+          <dt>Distanza</dt><dd><span class="ph">[KM]</span> km</dd>
+          <dt>Gruppi</dt><dd>3 ritmi</dd>
+        </dl>
+        <a class="btn btn-primary" href="#contatti" style="justify-content:center">Ci vediamo lì</a>
+      </aside>
+
+      <div class="hero-text">
+        <div class="hero-copy">
+          <p class="eyebrow">Club di corsa della comunità universitaria · gratis</p>
+          <h1 id="hero-title">Corri<br>con noi.</h1>
+        </div>
+        <div class="hero-copy" style="align-self:end">
+          <p class="lead">Uscite di gruppo ogni settimana, per tutti i livelli. Mai corso prima? C'è un gruppo per te. Porta solo le scarpe.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#programma">Vedi il programma</a>
+            <a class="btn btn-ghost" href="#iniziare">Come si inizia</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="programma" aria-labelledby="prog-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Ogni settimana</p>
+        <h2 class="display" id="prog-title">Il programma</h2>
+        <p class="lead">Tre appuntamenti fissi. Si parte puntuali, si aspetta chi arriva dopo al primo semaforo.</p>
+      </div>
+      <div class="board-scroll" role="region" aria-label="Tabellone delle uscite" tabindex="0">
+        <table class="board">
+          <thead><tr><th scope="col">Giorno</th><th scope="col">Uscita</th><th scope="col">Ora</th><th scope="col">Ritrovo</th><th scope="col">Distanza</th></tr></thead>
+          <tbody>
+            <tr><td class="day">LUN</td><td class="what"><strong>Corsa lenta</strong><span>Si chiacchiera mentre si corre.</span></td><td data-k="Ora"><span class="ph">[ORA]</span></td><td data-k="Ritrovo"><span class="ph">[LUOGO]</span></td><td data-k="Distanza"><span class="ph">[KM]</span> km</td></tr>
+            <tr><td class="day">MER</td><td class="what"><strong>Ripetute in pista</strong><span>Riscaldamento insieme, poi ognuno al suo ritmo.</span></td><td data-k="Ora"><span class="ph">[ORA]</span></td><td data-k="Ritrovo"><span class="ph">[LUOGO]</span></td><td data-k="Distanza"><span class="ph">[KM]</span> km</td></tr>
+            <tr><td class="day">DOM</td><td class="what"><strong>Il lungo</strong><span>Il lungomare è la nostra pista. Poi caffè.</span></td><td data-k="Ora"><span class="ph">[ORA]</span></td><td data-k="Ritrovo"><span class="ph">[LUOGO]</span></td><td data-k="Distanza"><span class="ph">[KM]</span> km</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="gruppi" aria-labelledby="gruppi-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Tre ritmi, un gruppo solo</p>
+        <h2 class="display" id="gruppi-title">Trova il tuo passo</h2>
+        <p class="lead">A ogni uscita ci dividiamo per ritmo e ci ritroviamo all'arrivo. Puoi cambiare gruppo quando vuoi.</p>
+      </div>
+      <div class="groups">
+        <article class="group">
+          <div class="meter" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+          <h3>Primi passi</h3>
+          <p>Per chi non ha mai corso o riparte da zero. Si alterna corsa e camminata.</p>
+          <div class="pace"><span>Ritmo</span><span>oltre 6'45"/km</span></div>
+        </article>
+        <article class="group">
+          <div class="meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></div>
+          <h3>Passo costante</h3>
+          <p>Corri già un po' e vuoi farlo con regolarità, in compagnia.</p>
+          <div class="pace"><span>Ritmo</span><span>5'45"–6'45"/km</span></div>
+        </article>
+        <article class="group">
+          <div class="meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></div>
+          <h3>Passo svelto</h3>
+          <p>Prepari una gara o vuoi spingere un po' di più, senza lasciare indietro nessuno.</p>
+          <div class="pace"><span>Ritmo</span><span>sotto 5'45"/km</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="iniziare" aria-labelledby="iniziare-title" style="border-top:1px solid var(--line)">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Due passi alla volta</p>
+        <h2 class="display" id="iniziare-title">Come si inizia</h2>
+      </div>
+      <ol class="steps">
+        <li><h3>Scrivici</h3><p>Un messaggio su Instagram o una mail. Dicci da quanto corri, anche se la risposta è "mai".</p></li>
+        <li><h3>Vieni al ritrovo</h3><p>Scegli un'uscita del programma. Ti presentiamo al gruppo del tuo ritmo.</p></li>
+        <li><h3>Corri</h3><p>Si parte insieme, si arriva insieme. Alla prima uscita nessuno guarda il cronometro.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="motto" aria-label="Il motto del club">
+    <div class="wrap">
+      <svg class="bars" aria-hidden="true"><use href="#ii"/></svg>
+      <p>Si parte insieme, si arriva insieme.</p>
+    </div>
+  </section>
+
+  <section class="section" id="domande" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Prima di venire</p>
+        <h2 class="display" id="faq-title">Domande</h2>
+      </div>
+      <div class="faq">
+        <details open><summary>Quanto costa?</summary><p>Niente. Le uscite sono gratis per tutti.</p></details>
+        <details><summary>Devo essere veloce?</summary><p>No. Il gruppo Primi passi esiste apposta, e a ogni uscita qualcuno corre con chi chiude il gruppo.</p></details>
+        <details><summary>Chi può venire?</summary><p>Studenti, dottorandi e personale della comunità universitaria. <span class="ph">[DA CONFERMARE]</span></p></details>
+        <details><summary>E se piove?</summary><p>Si corre lo stesso, poi caffè. Se un'uscita salta lo scriviamo subito su Instagram.</p></details>
+        <details><summary>Cosa devo portare?</summary><p>Scarpe da corsa e una bottiglietta d'acqua. Per le borse, chiedi al ritrovo.</p></details>
+        <details><summary>Fate anche gare?</summary><p>Ci iscriviamo insieme ad alcune corse in città durante l'anno. Le annunciamo sui social.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="band contact" id="contatti" aria-labelledby="contatti-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Ti aspettiamo al ritrovo</p>
+        <h2 class="display" id="contatti-title">Corri con noi</h2>
+        <p class="lead">Scrivici per la prima uscita. Rispondiamo in giornata, di solito dopo la corsa.</p>
+      </div>
+      <div class="cards">
+        <div class="contact-card"><div><div class="k">Instagram</div><div class="v" id="ig">@[INSTAGRAM]</div></div><button class="copy" type="button" data-copy="ig">Copia</button></div>
+        <div class="contact-card"><div><div class="k">Email</div><div class="v" id="mail">[EMAIL]</div></div><button class="copy" type="button" data-copy="mail">Copia</button></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Runclub Federico II · Napoli</span>
+    <span>Due passi alla volta.</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
