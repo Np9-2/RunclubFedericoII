@@ -8,6 +8,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,700;0,800;1,900&family=JetBrains+Mono:wght@500;700&display=swap">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/omino.css">
+<script>
+  /* nasconde omino e orme finché parte l'animazione; se lo script non arriva, li mostra dopo 4 s */
+  if (!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+    document.documentElement.classList.add('rc-intro');
+    setTimeout(function () { if (!window.__rcStarted) document.documentElement.classList.remove('rc-intro'); }, 4000);
+  }
+</script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -31,8 +39,30 @@
   <section class="hero" aria-labelledby="hero-title">
     <div class="wrap">
       <figure class="hero-logo">
-        <img class="logo-light" src="img/logo-chiaro.webp" width="1568" height="676" alt="Logo Runclub Federico II: un omino bianco corre sulla II del nome">
-        <img class="logo-dark" src="img/logo-scuro.webp" width="1568" height="676" alt="Logo Runclub Federico II: un omino bianco corre sulla II del nome">
+        <img class="logo-light" src="img/logo-base-chiaro.webp" width="1568" height="676" alt="Logo Runclub Federico II: un omino bianco corre sulla II del nome">
+        <img class="logo-dark" src="img/logo-base-scuro.webp" width="1568" height="676" alt="Logo Runclub Federico II: un omino bianco corre sulla II del nome">
+                <svg class="rc-layer" viewBox="0 0 784 338" aria-hidden="true">
+          <defs>
+            <path id="rc-sole" d="M0,-15 C4,-15 6,-11.5 6,-6.5 C6,-1.5 4.6,1.5 4.6,5 C4.6,9.5 4.8,15 0,15 C-4.6,15 -4.6,10 -4.1,6 C-3.7,3 -2.3,1 -2.6,-3 C-2.9,-6.5 -5,-8 -5,-10.8 C-5,-13.6 -3,-15 0,-15 Z"/>
+            <clipPath id="rc-sole-clip"><path d="M0,-15 C4,-15 6,-11.5 6,-6.5 C6,-1.5 4.6,1.5 4.6,5 C4.6,9.5 4.8,15 0,15 C-4.6,15 -4.6,10 -4.1,6 C-3.7,3 -2.3,1 -2.6,-3 C-2.9,-6.5 -5,-8 -5,-10.8 C-5,-13.6 -3,-15 0,-15 Z"/></clipPath>
+            <filter id="rc-b9" x="-80%" y="-50%" width="260%" height="200%"><feGaussianBlur stdDeviation="9"/></filter>
+            <filter id="rc-b2" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="1.6"/></filter>
+          </defs>
+          <g class="rc-prints">
+          <g class="rc-print" data-y="228" style="--rc-op:0.85" transform="translate(688.62 228) rotate(9.4) scale(0.6)"><use href="#rc-sole" class="rc-print-fill"/><g clip-path="url(#rc-sole-clip)" class="rc-groove"><path d="M-7,-11 Q0,-12.6 7,-11"/><path d="M-7,-7 Q0,-8.6 7,-7"/><path d="M-7,-3 Q0,-4.6 7,-3"/><path d="M-7,7.5 L7,7.5"/><path d="M-7,11.2 L7,11.2"/><path d="M0.5,-13 L0.5,0.5 M0.3,4.5 L0.3,13.5" stroke-width="0.8"/><path d="M-7,2.8 L7,2.8" stroke-width="2.2"/></g></g>
+          <g class="rc-print" data-y="246" style="--rc-op:0.6" transform="translate(653.7 246) rotate(9.4) scale(0.6) scale(-1 1)"><use href="#rc-sole" class="rc-print-fill"/><g clip-path="url(#rc-sole-clip)" class="rc-groove"><path d="M-7,-11 Q0,-12.6 7,-11"/><path d="M-7,-7 Q0,-8.6 7,-7"/><path d="M-7,-3 Q0,-4.6 7,-3"/><path d="M-7,7.5 L7,7.5"/><path d="M-7,11.2 L7,11.2"/><path d="M0.5,-13 L0.5,0.5 M0.3,4.5 L0.3,13.5" stroke-width="0.8"/><path d="M-7,2.8 L7,2.8" stroke-width="2.2"/></g></g>
+          <g class="rc-print" data-y="264" style="--rc-op:0.36" transform="translate(682.66 264) rotate(9.4) scale(0.6)"><use href="#rc-sole" class="rc-print-fill"/><g clip-path="url(#rc-sole-clip)" class="rc-groove"><path d="M-7,-11 Q0,-12.6 7,-11"/><path d="M-7,-7 Q0,-8.6 7,-7"/><path d="M-7,-3 Q0,-4.6 7,-3"/><path d="M-7,7.5 L7,7.5"/><path d="M-7,11.2 L7,11.2"/><path d="M0.5,-13 L0.5,0.5 M0.3,4.5 L0.3,13.5" stroke-width="0.8"/><path d="M-7,2.8 L7,2.8" stroke-width="2.2"/></g></g>
+          </g>
+          <g id="rc-runner" data-px="682.24" data-py="140" data-cx="687.95" data-foot="213.8">
+            <g transform="rotate(9.4 682.24 140)">
+              <g class="rc-shadow">
+                <ellipse cx="688.24" cy="130" rx="16" ry="44" opacity="0.11" filter="url(#rc-b9)"/>
+                <ellipse cx="683.24" cy="142" rx="7" ry="4" opacity="0.4" filter="url(#rc-b2)"/>
+              </g>
+              <g id="rc-bob"><g id="rc-flip"><image href="img/omino.webp" x="653.35" y="47.62" width="69.2" height="168.0"/></g></g>
+            </g>
+          </g>
+        </svg>
       </figure>
 
       <aside class="ticket" aria-labelledby="next-title">
@@ -171,5 +201,6 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/omino.js"></script>
 </body>
 </html>

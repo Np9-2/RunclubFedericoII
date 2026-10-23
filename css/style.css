@@ -49,7 +49,7 @@ a { color: inherit; }
 
 /* due barre: il segno del club */
 .bars { display: inline-block; flex: none; width: 22px; height: 30px; }
-.bars path { fill: var(--accent); }
+.bars { fill: var(--accent); }
 
 /* bottoni */
 .btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: var(--pill); font-weight: 700; font-size: 16px; text-decoration: none; border: 2px solid transparent; cursor: pointer; font-family: inherit; transition: transform .15s ease; }

@@ -1,0 +1,23 @@
+/* Omino animato del logo: strato sopra l'immagine della scritta.
+   Colori delle orme e dell'ombra per i due temi (Calce e Golfo). */
+:root { --rc-print: #F4F2EC; --rc-groove: #0E2A47; --rc-shadow: #0E2A47; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --rc-print: #0E2A47; --rc-groove: #F2B632; --rc-shadow: #141414; }
+}
+:root[data-theme="dark"] { --rc-print: #0E2A47; --rc-groove: #F2B632; --rc-shadow: #141414; }
+
+.hero-logo { position: relative; }
+.rc-layer { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: 2; }
+
+.rc-print { opacity: var(--rc-op); transition: opacity .35s ease-out; }
+.rc-print-fill { fill: var(--rc-print); }
+.rc-groove { fill: none; stroke: var(--rc-groove); stroke-width: 1; stroke-linecap: round; }
+.rc-shadow { fill: var(--rc-shadow); mix-blend-mode: multiply; }
+
+#rc-runner { pointer-events: auto; cursor: pointer; }
+#rc-runner:focus-visible { outline: none; }
+
+/* Prima dell'animazione omino e orme sono nascosti (classe messa nell'<head>) */
+.rc-intro #rc-runner { opacity: 0; }
+.rc-intro .rc-print { opacity: 0; }
+.rc-print.rc-on { opacity: var(--rc-op); }
