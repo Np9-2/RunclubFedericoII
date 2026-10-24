@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,700;0,800;1,900&family=JetBrains+Mono:wght@500;700&display=swap">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/omino.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <script>
   /* nasconde omino e orme finché parte l'animazione; se lo script non arriva, li mostra dopo 4 s */
   if (!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) {
@@ -27,6 +28,7 @@
     <a class="brand" href="#inizio"><svg class="bars" aria-hidden="true"><use href="#ii"/></svg><span>Runclub<br>Federico II</span></a>
     <nav class="nav" aria-label="Sezioni">
       <a href="#programma">Programma</a>
+      <a href="#percorso">Percorso</a>
       <a href="#gruppi">Gruppi</a>
       <a href="#iniziare">Come iniziare</a>
       <a href="#domande">Domande</a>
@@ -41,7 +43,7 @@
       <figure class="hero-logo">
         <img class="logo-light" src="img/logo-base-chiaro.webp" width="1568" height="676" alt="Logo Runclub Federico II: un omino bianco corre sulla II del nome">
         <img class="logo-dark" src="img/logo-base-scuro.webp" width="1568" height="676" alt="Logo Runclub Federico II: un omino bianco corre sulla II del nome">
-                <svg class="rc-layer" viewBox="0 0 784 338" aria-hidden="true">
+        <svg class="rc-layer" viewBox="0 0 784 338" aria-hidden="true">
           <defs>
             <path id="rc-sole" d="M0,-15 C4,-15 6,-11.5 6,-6.5 C6,-1.5 4.6,1.5 4.6,5 C4.6,9.5 4.8,15 0,15 C-4.6,15 -4.6,10 -4.1,6 C-3.7,3 -2.3,1 -2.6,-3 C-2.9,-6.5 -5,-8 -5,-10.8 C-5,-13.6 -3,-15 0,-15 Z"/>
             <clipPath id="rc-sole-clip"><path d="M0,-15 C4,-15 6,-11.5 6,-6.5 C6,-1.5 4.6,1.5 4.6,5 C4.6,9.5 4.8,15 0,15 C-4.6,15 -4.6,10 -4.1,6 C-3.7,3 -2.3,1 -2.6,-3 C-2.9,-6.5 -5,-8 -5,-10.8 C-5,-13.6 -3,-15 0,-15 Z"/></clipPath>
@@ -115,7 +117,39 @@
     </div>
   </section>
 
-  <section class="section" id="gruppi" aria-labelledby="gruppi-title">
+  <section class="section" id="percorso" aria-labelledby="percorso-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Il lungo della domenica</p>
+        <h2 class="display" id="percorso-title">Il percorso</h2>
+        <p class="lead">Dal ritrovo si scende al mare e si corre sul lungomare fino a Castel dell'Ovo, poi si torna indietro. Tutto in piano.</p>
+      </div>
+      <div class="route">
+        <div class="map-panel">
+          <div id="mappa" class="map" role="region" aria-label="Mappa del percorso"><noscript><p class="map-fallback">Attiva JavaScript per vedere la mappa.</p></noscript></div>
+          <button class="map-reset" id="mappa-reset" type="button">Centra il percorso</button>
+        </div>
+        <aside class="route-info" aria-label="Dettagli del percorso">
+          <dl>
+            <dt>Ritrovo</dt><dd><span class="ph">Via Porta di Massa 32</span></dd>
+            <dt>Distanza</dt><dd id="percorso-km">5,1 km</dd>
+            <dt>Tipo</dt><dd>Andata e ritorno</dd>
+            <dt>Fondo</dt><dd>Asfalto</dd>
+          </dl>
+          <ol class="stops">
+            <li>Via Porta di Massa</li>
+            <li>Molo Beverello</li>
+            <li>Via Acton</li>
+            <li>Castel dell'Ovo, si gira</li>
+            <li>Ritorno al ritrovo</li>
+          </ol>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=40.84401,14.25879" target="_blank" rel="noopener" style="justify-content:center">Come arrivare al ritrovo</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="gruppi" aria-labelledby="gruppi-title" style="border-top:1px solid var(--line)">
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">Tre ritmi, un gruppo solo</p>
@@ -202,5 +236,7 @@
 
 <script src="js/main.js"></script>
 <script src="js/omino.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="js/percorso.js"></script>
 </body>
 </html>

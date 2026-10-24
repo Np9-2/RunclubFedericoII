@@ -122,6 +122,30 @@ a { color: inherit; }
 .meter i { width: 10px; height: 16px; background: var(--line); transform: skewX(-9deg); border-radius: 1px; }
 .meter i.on { background: var(--accent); }
 
+/* percorso: mappa a sinistra, dettagli a destra */
+.route { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 16px; align-items: stretch; }
+.map-panel { position: relative; background: var(--surface-raised); border: 1px solid var(--line); border-radius: var(--r-l); box-shadow: var(--shadow); overflow: hidden; min-height: 460px; }
+.map { position: absolute; inset: 0; background: var(--surface-raised); font-family: var(--sans); }
+.map-fallback { margin: 0; padding: 24px; color: var(--ink-muted); }
+.map-reset { position: absolute; right: 12px; bottom: 28px; z-index: 500; font: 700 13px/1 var(--sans); letter-spacing: 0.06em; text-transform: uppercase; padding: 10px 14px; border-radius: var(--pill); border: 1.5px solid var(--ink); background: var(--surface-raised); color: var(--ink); cursor: pointer; }
+.map .leaflet-tile-pane { filter: saturate(0.35) contrast(0.95); }
+.map.map-dark .leaflet-tile-pane { filter: invert(1) hue-rotate(185deg) saturate(0.5) brightness(0.9) contrast(0.9); }
+.map .map-start { display: flex; align-items: center; justify-content: center; box-sizing: border-box; background: var(--ink); border: 3px solid var(--surface-raised); border-radius: 50%; box-shadow: 0 2px 8px rgba(0, 0, 0, .3); }
+.map .map-start .bars { width: 13px; height: 18px; display: block; }
+.map .map-km { display: flex; align-items: center; justify-content: center; box-sizing: border-box; background: var(--surface-raised); color: var(--ink); border: 2px solid var(--accent); border-radius: 50%; font: 700 12px/1 var(--mono); }
+.map-panel .map .leaflet-control-zoom a { background: var(--surface-raised); color: var(--ink); border-color: var(--line); }
+.map-panel .map .leaflet-control-attribution { background: var(--surface-raised); color: var(--ink-muted); }
+.map-panel .map .leaflet-control-attribution a { color: var(--ink); }
+.route-info { background: var(--surface-raised); border: 1px solid var(--line); border-radius: var(--r-l); padding: 24px; display: grid; gap: 20px; align-content: start; }
+.route-info dl { margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); border-top: 1.5px solid var(--ink); }
+.route-info dt, .route-info dd { margin: 0; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.route-info dt { font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); padding-right: 16px; }
+.route-info dd { font-family: var(--mono); font-size: 15px; font-weight: 500; text-align: right; }
+.stops { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; counter-reset: stop; }
+.stops li { position: relative; padding: 0 0 14px 28px; counter-increment: stop; font-weight: 500; }
+.stops li::before { content: ""; position: absolute; left: 4px; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+.stops li:not(:last-child)::after { content: ""; position: absolute; left: 8px; top: 18px; bottom: 2px; width: 2px; background: var(--line); }
+
 /* come iniziare: tre passi in ordine */
 .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; counter-reset: step; }
 .steps li { display: grid; gap: 10px; align-content: start; counter-increment: step; }
@@ -159,7 +183,8 @@ footer .wrap { padding-block: 24px 40px; display: flex; flex-wrap: wrap; justify
 
 @media (max-width: 900px) {
   .hero .wrap, .hero-text, .contact .wrap { grid-template-columns: minmax(0, 1fr); gap: 32px; }
-  .groups, .steps, .faq { grid-template-columns: minmax(0, 1fr); }
+  .groups, .steps, .faq, .route { grid-template-columns: minmax(0, 1fr); }
+  .map-panel { min-height: 380px; }
   .steps { gap: 32px; }
   .hero-logo { margin: 0; }
 }
