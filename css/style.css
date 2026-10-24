@@ -2,7 +2,7 @@
    le due barre inclinate della II fanno da divisori e da indicatore "prossima uscita". */
 :root {
   /* colori fissi del marchio */
-  --golfo: #0E2A47; --tufo: #F2B632; --lava: #E2462B; --pietra: #141414; --calce: #F4F2EC; --azzurro: #9ECBE6;
+  --golfo: #0E2A47; --tufo: #F2B632; --lava: #fb4563; --pietra: #141414; --calce: #F4F2EC; --azzurro: #9ECBE6;
   /* tema Calce (chiaro) */
   --surface: #F4F2EC; --surface-raised: #FFFFFF; --ink: #0E2A47; --ink-muted: #4C5A6B;
   --accent: #fb4563; --accent-text: #fb4563; --on-accent: #141414; --line: #D9D4C7;
