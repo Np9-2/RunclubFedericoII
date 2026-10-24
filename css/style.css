@@ -137,6 +137,8 @@ a { color: inherit; }
 .map .leaflet-tile-pane { filter: saturate(0.35) contrast(0.95); }
 .map.map-dark .leaflet-tile-pane { filter: invert(1) hue-rotate(185deg) saturate(0.5) brightness(0.9) contrast(0.9); }
 .map .map-start { display: flex; align-items: center; justify-content: center; box-sizing: border-box; background: var(--ink); border: 3px solid var(--surface-raised); border-radius: 50%; box-shadow: 0 2px 8px rgba(0, 0, 0, .3); }
+.map .map-end { display: flex; align-items: center; justify-content: center; box-sizing: border-box; background: var(--accent); border: 3px solid var(--surface-raised); border-radius: 50%; box-shadow: 0 2px 8px rgba(0, 0, 0, .3); }
+.map .map-end svg { width: 16px; height: 16px; fill: none; stroke: var(--on-accent); stroke-width: 1.8; stroke-linejoin: round; }
 .map .map-start .bars { width: 13px; height: 18px; display: block; }
 .map .map-km { display: flex; align-items: center; justify-content: center; box-sizing: border-box; background: var(--surface-raised); color: var(--ink); border: 2px solid var(--accent); border-radius: 50%; font: 700 12px/1 var(--mono); }
 .map-panel .map .leaflet-control-zoom a { background: var(--surface-raised); color: var(--ink); border-color: var(--line); }
