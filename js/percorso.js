@@ -29,7 +29,7 @@
     bordo.setStyle({ color: css('--surface-raised'), opacity: 1 });
     linea.setStyle({ color: css('--accent'), opacity: 1 });
   }
-  
+
   // partenza (il ritrovo) e arrivo: due segnaposto diversi
   function pin(punto, classe, icona, testo) {
     L.marker(punto, {
@@ -45,7 +45,7 @@
   for (var j = 1; j < PUNTI.length; j++) lungo += L.latLng(PUNTI[j - 1]).distanceTo(PUNTI[j]);
   for (var i = 1, km = 1; i < PUNTI.length; i++) {
     var a = L.latLng(PUNTI[i - 1]), b = L.latLng(PUNTI[i]), d = a.distanceTo(b);
-    while (tot + d >= km * 1000 && km * 1000 <= lungo / 2) {
+    while (tot + d >= km * 1000 && km * 1000 < lungo) {
       var f = (km * 1000 - tot) / d;
       L.marker([a.lat + (b.lat - a.lat) * f, a.lng + (b.lng - a.lng) * f], {
         icon: L.divIcon({ className: 'map-km', html: km, iconSize: [26, 26], iconAnchor: [13, 13] }),
