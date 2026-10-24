@@ -29,13 +29,16 @@
     bordo.setStyle({ color: css('--surface-raised'), opacity: 1 });
     linea.setStyle({ color: css('--accent'), opacity: 1 });
   }
-
-  // partenza e arrivo coincidono: un solo segnaposto con le due barre del club
-  var start = L.marker(PUNTI[0], {
-    icon: L.divIcon({ className: 'map-start', html: '<svg class="bars" aria-hidden="true"><use href="#ii"/></svg>', iconSize: [36, 36], iconAnchor: [18, 18] }),
-    title: 'Ritrovo: partenza e arrivo', keyboard: false
-  }).addTo(map);
-  start.bindTooltip('Partenza e arrivo', { direction: 'top', offset: [0, -16] });
+  
+  // partenza (il ritrovo) e arrivo: due segnaposto diversi
+  function pin(punto, classe, icona, testo) {
+    L.marker(punto, {
+      icon: L.divIcon({ className: classe, html: icona, iconSize: [36, 36], iconAnchor: [18, 18] }),
+      title: testo, keyboard: false
+    }).addTo(map).bindTooltip(testo, { direction: 'top', offset: [0, -16] });
+  }
+  pin(PUNTI[0], 'map-start', '<svg class="bars" aria-hidden="true"><use href="#ii"/></svg>', 'Partenza: punto di ritrovo');
+  pin(PUNTI[PUNTI.length - 1], 'map-end', '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 1.5v13M4 2.5h8.5l-2 3 2 3H4"/></svg>', 'Arrivo');
 
   // un segno a ogni chilometro dell'andata (al ritorno si ripassa sulla stessa strada)
   var tot = 0, lungo = 0;
