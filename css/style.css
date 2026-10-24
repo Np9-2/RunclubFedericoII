@@ -155,6 +155,47 @@ a { color: inherit; }
 .stops li::before { content: ""; position: absolute; left: 4px; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
 .stops li:not(:last-child)::after { content: ""; position: absolute; left: 8px; top: 18px; bottom: 2px; width: 2px; background: var(--line); }
 
+/* merch: il pezzo forte in grande, poi il catalogo a schede */
+.merch-hero { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 32px; align-items: center; background: var(--surface-raised); border: 1px solid var(--line); border-radius: var(--r-l); padding: 20px 32px 20px 20px; }
+.merch-hero figure, .merch-item figure { margin: 0; border-radius: var(--r-m); background: #ECE8DF; overflow: hidden; }   /* foto prodotto con gli angoli arrotondati */
+.merch-hero img, .merch-item img { display: block; width: 100%; height: auto; }
+.merch-hero-text { display: grid; gap: 16px; align-content: start; }
+.merch-hero h3 { margin: 0; font-size: clamp(32px, 4vw, 48px); font-weight: 900; font-style: italic; text-transform: uppercase; letter-spacing: -0.02em; line-height: 0.95; }
+.merch-hero p:not(.eyebrow) { margin: 0; color: var(--ink-muted); max-width: 32em; }
+.merch-spec { margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); border-top: 1.5px solid var(--ink); }
+.merch-spec dt, .merch-spec dd { margin: 0; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.merch-spec dt { font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); padding-right: 16px; }
+.merch-spec dd { font-family: var(--mono); font-size: 15px; font-weight: 500; text-align: right; }
+.merch-hero .btn { justify-self: start; }
+.merch-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.merch-item { background: var(--surface-raised); border: 1px solid var(--line); border-radius: var(--r-m); padding: 8px; display: flex; flex-direction: column; }
+.merch-item figure { border-radius: calc(var(--r-m) - 4px); }
+.merch-body { padding: 14px 10px 8px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.merch-body h3 { margin: 0; font-size: 19px; font-weight: 800; line-height: 1.2; letter-spacing: -0.01em; }
+.merch-body p { margin: 0; color: var(--ink-muted); font-size: 15px; line-height: 1.45; }
+.merch-meta { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.merch-body p + .merch-meta { margin-top: auto; }
+.merch-body > p { margin-bottom: 8px; }
+.swatches { display: flex; gap: 6px; }
+.swatches i { width: 16px; height: 16px; border-radius: 50%; background: var(--c); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ink) 25%, transparent); }
+.merch-idea { background: var(--band); color: var(--band-ink); border-color: transparent; padding: 24px; justify-content: flex-end; gap: 12px; }
+.merch-idea h3 { margin: 0; font-size: 28px; font-weight: 900; font-style: italic; text-transform: uppercase; letter-spacing: -0.02em; line-height: 0.95; }
+.merch-idea p { margin: 0; color: var(--band-muted); font-size: 15px; }
+.merch-idea a { color: var(--band-accent); font-weight: 700; text-decoration: none; }
+.merch-idea a:hover { text-decoration: underline; }
+.merch-note { margin: 0; font-size: 14px; color: var(--ink-muted); max-width: 46em; }
+@media (max-width: 900px) {
+  .merch-hero { grid-template-columns: minmax(0, 1fr); gap: 16px; padding: 12px 12px 24px; }
+  .merch-hero-text { padding: 0 8px; }
+  .merch-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+}
+@media (max-width: 480px) {
+  .merch-grid { gap: 10px; }
+  .merch-body { padding: 10px 6px 4px; }
+  .merch-body h3 { font-size: 17px; }
+  .merch-body p { font-size: 14px; }
+}
+
 /* come iniziare: tre passi in ordine */
 .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; counter-reset: step; }
 .steps li { display: grid; gap: 10px; align-content: start; counter-increment: step; }
