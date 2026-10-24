@@ -17,6 +17,21 @@
 #rc-runner { pointer-events: auto; cursor: pointer; }
 #rc-runner:focus-visible { outline: none; }
 
+/* Schermata di caricamento: copre la pagina finché l'omino parte (classe messa nell'<head>) */
+#rc-loader, .rc-fly { display: none; }
+.rc-loading, .rc-loading body { overflow: hidden; }
+.rc-loading #rc-loader { display: block; position: fixed; inset: 0; z-index: 1000; background: var(--surface); transition: opacity .6s ease; }
+#rc-loader.rc-out { opacity: 0; pointer-events: none; }
+
+/* Omino in corsa: al centro durante il caricamento, poi lo script lo porta fino al logo */
+.rc-fly { position: fixed; z-index: 1001; left: 50%; top: 50%; height: min(34vh, 300px); aspect-ratio: 69.2 / 168; transform: translate(-50%, -55%); pointer-events: none; will-change: transform; transition: opacity .25s ease; }
+.rc-loading .rc-fly, .rc-fly.rc-on { display: block; }
+.rc-fly.rc-js { left: 0; top: 0; }
+.rc-fly.rc-gone { opacity: 0; }
+.rc-fly-body, .rc-fly-shadow { position: absolute; inset: 0; transform-origin: 50% 45%; }
+.rc-fly-body img { display: block; width: 100%; height: 100%; }
+.rc-fly-shadow { inset: 18% 14% 12%; border-radius: 50%; background: var(--rc-shadow); opacity: .16; filter: blur(10px); }
+
 /* Prima dell'animazione omino e orme sono nascosti (classe messa nell'<head>) */
 .rc-intro #rc-runner { opacity: 0; }
 .rc-intro .rc-print { opacity: 0; }

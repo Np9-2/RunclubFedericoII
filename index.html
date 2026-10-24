@@ -11,14 +11,18 @@
 <link rel="stylesheet" href="css/omino.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <script>
-  /* nasconde omino e orme finché parte l'animazione; se lo script non arriva, li mostra dopo 4 s */
+  /* schermata di caricamento con l'omino e omino del logo nascosto finché parte l'animazione;
+     se lo script non arriva, mostra il sito dopo 4 s */
   if (!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) {
-    document.documentElement.classList.add('rc-intro');
-    setTimeout(function () { if (!window.__rcStarted) document.documentElement.classList.remove('rc-intro'); }, 4000);
+    document.documentElement.classList.add('rc-intro', 'rc-loading');
+    setTimeout(function () { if (!window.__rcStarted) document.documentElement.classList.remove('rc-intro', 'rc-loading'); }, 4000);
   }
 </script>
+<link rel="preload" as="image" href="img/omino.webp">
 </head>
 <body>
+<div id="rc-loader" aria-hidden="true"></div>
+<div id="rc-fly" class="rc-fly" aria-hidden="true"><div class="rc-fly-shadow"></div><div class="rc-fly-body"><img src="img/omino.webp" width="194" height="471" alt=""></div></div>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="ii" viewBox="0 0 66 92"><path d="M0 92 H22 L38 0 H16 Z"/><path d="M28 92 H50 L66 0 H44 Z"/></symbol>
 </svg>
@@ -82,6 +86,7 @@
       </aside>
 
       <div class="hero-text">
+        <div class="hero-rule" aria-hidden="true"><svg class="bars"><use href="#ii"/></svg><span>Due passi alla volta</span></div>
         <div class="hero-copy">
           <p class="eyebrow">Club di corsa della comunità universitaria · gratis</p>
           <h1 id="hero-title">Corri<br>con noi.</h1>
