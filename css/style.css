@@ -62,6 +62,7 @@ a { color: inherit; }
 .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; }
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 900; font-style: italic; letter-spacing: -0.02em; font-size: 19px; line-height: 0.95; }
 .brand .bars { width: 18px; height: 26px; }
+.brand-logo { display: block; width: 40px; height: 40px; flex: none; border-radius: 50%; box-shadow: 0 0 0 1.5px color-mix(in srgb, var(--ink) 35%, transparent); }
 .nav { display: flex; align-items: center; gap: 24px; }
 .nav a:not(.btn) { text-decoration: none; font-weight: 500; font-size: 15px; color: var(--ink-muted); }
 .nav a:not(.btn):hover { color: var(--ink); }
