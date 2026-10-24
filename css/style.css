@@ -6,7 +6,7 @@
   /* tema Calce (chiaro) */
   --surface: #F4F2EC; --surface-raised: #FFFFFF; --ink: #0E2A47; --ink-muted: #4C5A6B;
   --accent: #E2462B; --accent-text: #C23A20; --on-accent: #141414; --line: #D9D4C7;
-  --band: #0E2A47; --band-ink: #F4F2EC; --band-muted: #B7C3D2; --band-accent: #F2B632; --band-line: #2A4A6E;
+  --band: #0E2A47; --band-ink: #F4F2EC; --band-muted: #B7C3D2; --band-accent: #fb4563; --band-line: #2A4A6E;
   --ph-bg: #FBE3A3; --ph-ink: #141414;
   --shadow: 0 1px 29px 10px rgba(14, 42, 71, 0.10);
   --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
