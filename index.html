@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,700;0,800;1,900&family=JetBrains+Mono:wght@500;700&display=swap">
-<link rel="stylesheet" href="css/style.css?v=2">
+<link rel="stylesheet" href="css/style.css?v=3">
 <link rel="stylesheet" href="css/omino.css?v=2">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <script>
@@ -129,12 +129,26 @@
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">Corsa panoramica</p>
-        <h2 class="display" id="percorso-title">Il percorso</h2>
-        <p class="lead">Dal ritrovo si percorre Via Toledo e poi si fa il giro per il Lungomare. L'arrivo è in Piazza del Plebiscito.</p>
+        <h2 class="display" id="percorso-title">I percorsi</h2>
+        <p class="lead">Tre distanze, stesso ritrovo e stesso arrivo. Dal ritrovo si scende per Via Toledo, poi ogni gruppo fa il suo giro sul Lungomare. L'arrivo è per tutti in Piazza del Plebiscito.</p>
       </div>
-      <div class="route">
+      <div class="route-tabs" role="tablist" aria-label="Scegli il percorso">
+        <button type="button" role="tab" id="tab-principiante" aria-controls="percorso-pannello" aria-selected="true" data-percorso="0">
+          <span class="meter" aria-hidden="true"><i class="on"></i><i></i><i></i></span>
+          <span class="route-tab-name">Principiante</span><span class="route-tab-km" data-km>4,3 km</span>
+        </button>
+        <button type="button" role="tab" id="tab-intermedio" aria-controls="percorso-pannello" aria-selected="false" tabindex="-1" data-percorso="1">
+          <span class="meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></span>
+          <span class="route-tab-name">Intermedio</span><span class="route-tab-km" data-km>6,7 km</span>
+        </button>
+        <button type="button" role="tab" id="tab-avanzato" aria-controls="percorso-pannello" aria-selected="false" tabindex="-1" data-percorso="2">
+          <span class="meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span>
+          <span class="route-tab-name">Avanzato</span><span class="route-tab-km" data-km>8,1 km</span>
+        </button>
+      </div>
+      <div class="route" id="percorso-pannello" role="tabpanel" aria-labelledby="tab-principiante">
         <div class="map-panel">
-          <div id="mappa" class="map" role="region" aria-label="Mappa del percorso"><noscript><p class="map-fallback">Attiva JavaScript per vedere la mappa.</p></noscript></div>
+          <div id="mappa" class="map" role="region" aria-label="Mappa dei percorsi"><noscript><p class="map-fallback">Attiva JavaScript per vedere la mappa.</p></noscript></div>
           <button class="map-reset" id="mappa-reset" type="button">Centra il percorso</button>
         </div>
         <aside class="route-info" aria-label="Dettagli del percorso">
@@ -142,14 +156,15 @@
             <dt>Ritrovo</dt><dd><span class="ph">Piazza Dante</span></dd>
             <dt>Arrivo</dt><dd><span class="ph">Piazza del Plebiscito</span></dd>
             <dt>Distanza</dt><dd><span class="ph" id="percorso-km"></span></dd>
-            <dt>Gruppi</dt><dd><span class="ph">3</span></dd>
+            <dt>Gruppo</dt><dd><span class="ph" id="percorso-gruppo">Principiante</span></dd>
           </dl>
-          <ol class="stops">
+          <ol class="stops" id="percorso-tappe">
             <li>Piazza Dante</li>
             <li>Via Toledo</li>
             <li>Via Chiaia</li>
             <li>Via Carlo Poerio</li>
-            <li>Lungomare</li>
+            <li>Piazza Vittoria</li>
+            <li>Via Partenope</li>
             <li>Piazza del Plebiscito</li>
           </ol>
           <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=40.848938,14.250019" target="_blank" rel="noopener" style="justify-content:center">Come arrivare al ritrovo</a>
@@ -317,6 +332,6 @@
 <script src="js/main.js"></script>
 <script src="js/omino.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-<script src="js/percorso.js"></script>
+<script src="js/percorso.js?v=2"></script>
 </body>
 </html>

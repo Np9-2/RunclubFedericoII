@@ -129,7 +129,15 @@ a { color: inherit; }
 .meter i { width: 10px; height: 16px; background: var(--line); transform: skewX(-9deg); border-radius: 1px; }
 .meter i.on { background: var(--accent); }
 
-/* percorso: mappa a sinistra, dettagli a destra */
+/* percorsi: tre schede sopra, mappa a sinistra, dettagli a destra */
+.route-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-bottom: 16px; }
+.route-tabs [role="tab"] { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 4px 12px; padding: 14px 18px; border: 1.5px solid var(--line); border-radius: var(--r-m); background: var(--surface-raised); color: var(--ink); font-family: inherit; text-align: left; cursor: pointer; transition: border-color .15s ease; }
+.route-tabs [role="tab"]:hover { border-color: var(--ink-muted); }
+.route-tabs [role="tab"][aria-selected="true"] { border-color: var(--accent); box-shadow: inset 0 0 0 1.5px var(--accent); }
+.route-tabs .meter { grid-row: span 2; }
+.route-tab-name { font-size: 17px; font-weight: 800; line-height: 1.15; }
+.route-tab-km { font-family: var(--mono); font-size: 14px; font-weight: 500; color: var(--ink-muted); }
+.route-tabs [aria-selected="true"] .route-tab-km { color: var(--accent-text); }
 .route { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 16px; align-items: stretch; }
 .map-panel { position: relative; background: var(--surface-raised); border: 1px solid var(--line); border-radius: var(--r-l); box-shadow: var(--shadow); overflow: hidden; min-height: 460px; }
 .map { position: absolute; inset: 0; background: var(--surface-raised); font-family: var(--sans); }
@@ -235,6 +243,11 @@ footer .wrap { padding-block: 24px 40px; display: flex; flex-wrap: wrap; justify
   .hero .wrap, .hero-text, .contact .wrap { grid-template-columns: minmax(0, 1fr); gap: 32px; }
   .groups, .steps, .faq, .route { grid-template-columns: minmax(0, 1fr); }
   .map-panel { min-height: 380px; }
+  .route-tabs { gap: 6px; }
+  .route-tabs [role="tab"] { grid-template-columns: minmax(0, 1fr); padding: 12px 10px; }
+  .route-tabs .meter { grid-row: auto; }
+  .route-tab-name { font-size: 14px; letter-spacing: -0.01em; }
+  .route-tab-km { font-size: 13px; }
   .steps { gap: 32px; }
   .hero-logo { margin: 0; }
 }
@@ -248,4 +261,5 @@ footer .wrap { padding-block: 24px 40px; display: flex; flex-wrap: wrap; justify
   .board .day { grid-row: span 4; font-size: 28px; padding-right: 0; }
   .board td[data-k]::before { content: attr(data-k) " "; font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--band-muted); }
 }
-@media (prefers-reduced-motion: reduce) { .live .bars path:last-child { animation: none; } .btn { transition: none; } }
+@media (max-width: 370px) { .route-tabs [role="tab"] { padding-inline: 8px; } .route-tab-name { font-size: 12.5px; } }
+@media (prefers-reduced-motion: reduce) { .live .bars path:last-child { animation: none; } .btn, .route-tabs [role="tab"] { transition: none; } }
